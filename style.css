@@ -1,0 +1,568 @@
+/*
+    Project: The Den
+    Author: Katrina Allen
+    Date: 10/17/2026
+    Description: Complete stylesheet for The Den
+*/
+
+/* =============================
+   GLOBAL STYLES
+============================= */
+
+:root {
+    --primary: #7850d8;
+    --secondary: #f66f9d;
+    --dark: #1e1830;
+    --text: #494456;
+    --light: #f7f5fc;
+    --white: #ffffff;
+    --border: #eae5f3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 90px 0;
+}
+
+h1, h2, h3 {
+    color: var(--dark);
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+.eyebrow {
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* =============================
+   HEADER
+============================= */
+
+.site-header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    min-height: 85px;
+}
+
+.logo {
+    color: var(--dark);
+    font-size: 2rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--dark);
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: var(--primary);
+}
+
+/* =============================
+   HERO SECTION
+============================= */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #f1e7ff 0%,
+        #ffebf3 50%,
+        #e7e8ff 100%
+    );
+
+    min-height: 570px;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--primary);
+}
+
+.hero p:not(.eyebrow) {
+    max-width: 680px;
+    margin: 0 auto 35px;
+    font-size: 1.1rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 32px;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #5937b9;
+    transform: translateY(-3px);
+}
+
+/* =============================
+   INTRODUCTION
+============================= */
+
+.intro {
+    text-align: center;
+}
+
+.section-description {
+    max-width: 680px;
+    margin: 0 auto 45px;
+}
+
+/* =============================
+   CATEGORY CARDS
+============================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.category-card {
+    background-color: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 40px 20px;
+    color: var(--text);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+.category-icon {
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.category-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* =============================
+   CONTENT SECTIONS
+============================= */
+
+.content-section {
+    background-color: var(--white);
+}
+
+.alt-bg {
+    background-color: var(--light);
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.section-heading p:not(.eyebrow) {
+    font-size: 1.05rem;
+}
+
+/* =============================
+   FEATURE CARDS
+============================= */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.feature-card {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.10);
+}
+
+.card-visual {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-visual span {
+    font-size: 5rem;
+}
+
+.card-content {
+    padding: 28px;
+}
+
+.card-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    min-height: 100px;
+}
+
+.card-content a {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card-content a:hover {
+    color: #bf3769;
+    text-decoration: underline;
+}
+
+/* =============================
+   ART CARD COLORS
+============================= */
+
+.art-one {
+    background: linear-gradient(
+        135deg, #ffc5da, #dfa2f1
+    );
+}
+
+.art-two {
+    background: linear-gradient(
+        135deg, #b9e3ff, #a2afff
+    );
+}
+
+.art-three {
+    background: linear-gradient(
+        135deg, #ffe6b2, #ffb4bf
+    );
+}
+
+/* =============================
+   MUSIC CARD COLORS
+============================= */
+
+.music-one {
+    background: linear-gradient(
+        135deg, #d8c3ff, #a596ef
+    );
+}
+
+.music-two {
+    background: linear-gradient(
+        135deg, #ffbfd5, #ff90af
+    );
+}
+
+.music-three {
+    background: linear-gradient(
+        135deg, #b6eee4, #8fc9e5
+    );
+}
+
+/* =============================
+   VIDEO CARD COLORS
+============================= */
+
+.video-one {
+    background: linear-gradient(
+        135deg, #a9d0ff, #c5aaff
+    );
+}
+
+.video-two {
+    background: linear-gradient(
+        135deg, #ffdfaa, #ffc09c
+    );
+}
+
+.video-three {
+    background: linear-gradient(
+        135deg, #b9efca, #87d7c4
+    );
+}
+
+/* =============================
+   MOVIE CARD COLORS
+============================= */
+
+.movie-one {
+    background: linear-gradient(
+        135deg, #ffd7c9, #ed9aac
+    );
+}
+
+.movie-two {
+    background: linear-gradient(
+        135deg, #fff0ae, #ffc18b
+    );
+}
+
+.movie-three {
+    background: linear-gradient(
+        135deg, #c0baff, #8f9ded
+    );
+}
+
+/* =============================
+   ABOUT SECTION
+============================= */
+
+.about-section {
+    background: linear-gradient(
+        135deg, #f1e9ff, #ffeff5
+    );
+    text-align: center;
+}
+
+.about-content {
+    max-width: 750px;
+}
+
+.about-content p:not(.eyebrow) {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.about-content .button {
+    margin-top: 20px;
+}
+
+/* =============================
+   FOOTER
+============================= */
+
+.site-footer {
+    background-color: var(--dark);
+    color: #e5dfed;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.footer-logo {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.footer-logo span {
+    color: #b6a0ff;
+}
+
+.site-footer p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+/* =============================
+   TABLET RESPONSIVE DESIGN
+============================= */
+
+@media (max-width: 900px) {
+
+    .header-content {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-padding {
+        padding: 70px 0;
+    }
+}
+
+/* =============================
+   MOBILE RESPONSIVE DESIGN
+============================= */
+
+@media (max-width: 600px) {
+
+    html {
+        scroll-padding-top: 20px;
+    }
+
+    .site-header {
+        position: static;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        min-height: 460px;
+        padding: 75px 15px;
+    }
+
+    .hero p:not(.eyebrow) {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-content p {
+        min-height: auto;
+    }
+
+    .section-padding {
+        padding: 55px 0;
+    }
+
+    .card-visual {
+        height: 180px;
+    }
+}
+
+/* =============================
+   ACCESSIBILITY
+============================= */
+
+a:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
